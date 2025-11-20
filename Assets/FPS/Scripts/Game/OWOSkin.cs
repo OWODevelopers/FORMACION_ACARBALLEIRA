@@ -133,6 +133,23 @@ public class OWOSkin
         else Debug.Log($"Feedback not registered: {sensation}");
     }
 
+    public void FeelWithMuscles(Sensation sensation, String muscleKey = "Right Arm", int Priority = 0, int intensity = 0)
+    {
+        Debug.Log($"FEEL WITH MUSCLES: {sensation} - {muscleKey}");
+
+        if (sensation == null)
+            return;
+
+        if (intensity != 0)
+        {
+            OWO.Send(sensation.WithMuscles(muscleMap[muscleKey].WithIntensity(intensity)).WithPriority(Priority));
+        }
+        else
+        {
+            OWO.Send(sensation.WithMuscles(muscleMap[muscleKey]).WithPriority(Priority));
+        }
+    }
+
     public void FeelWithMuscles(String key, String muscleKey = "Right Arm", int Priority = 0, int intensity = 0)
     {
         Debug.Log($"FEEL WITH MUSCLES: {key} - {muscleKey}");

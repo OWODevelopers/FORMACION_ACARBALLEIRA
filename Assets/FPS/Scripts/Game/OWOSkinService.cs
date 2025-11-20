@@ -45,6 +45,13 @@ namespace OWOGame
             owoSkin?.Feel(key, Priority, intensity);
         }
 
+        public void FeelWithMuscles(Sensation sensation, String muscleKey = "Right Arm", int Priority = 0, int intensity = 0)
+        {
+            if (!CanFeel())
+                return;
+            owoSkin?.FeelWithMuscles(sensation, muscleKey, Priority, intensity);
+        }
+
         public void FeelWithMuscles(String key, String muscleKey = "Right Arm", int Priority = 0, int intensity = 0)
         {
             if (!CanFeel())
