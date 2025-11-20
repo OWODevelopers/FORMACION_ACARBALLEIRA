@@ -1,0 +1,9 @@
+0~Gun~100,10,75,0,0,0,Recoil|4%100~weapon-2~Recoil#
+1~Two-Handed Gun~100,10,75,0,0,0,Recoil|4%100,5%100~weapon-2~Recoil#
+2~Submachine Gun~15,10,75,0,0,0,Recoil|4%100,5%100~weapon-3~Recoil#
+3~Assasult Rifle~20,10,90,0,0,0,Recoil|0%100,4%100,5%100~weapon-3~Recoil#
+4~Machine Gun~11,10,90,0,0,0,Recoil|0%100,4%100,5%100,1%100,2%50,3%50~weapon-2~Recoil#
+5~Melee~100,1,90,0,0,0,Attack|4%100~weapon-0~Recoil#
+6~Sniper~100,2,85,100,100,3,Shoot|0%100,4%100,1%100,5%100,7%100,6%100&100,1,50,0,0,1,Reload|4%100~impact-8~Recoil#
+7~Shotgun~100,2,80,100,100,3,Shoot|0%100,5%100,1%100,4%100&100,3,0,0,0,0,Pausa|0%100&100,1,55,0,100,0,Reload|5%100&100,1,0,0,0,0,Pausa|0%100&100,1,55,0,100,0,Recargar|5%100~weapon-2~Recoil#
+8~Damage~41,1,90,100,0,0,|0%100&88,3,90,0,0,0,|0%100,1%100~weapon-0~Health

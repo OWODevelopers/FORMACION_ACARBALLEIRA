@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9ed7d10d23b725947b40a3875e6dfc5c
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 180991
+  packageName: OWO Integration
+  packageVersion: 2.3.8
+  assetPath: Assets/Plugins/OWO/OWO.xml
+  uploadId: 614210
