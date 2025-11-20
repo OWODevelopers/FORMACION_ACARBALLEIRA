@@ -121,9 +121,10 @@ namespace Unity.FPS.UI
                 EventSystem.current.SetSelectedGameObject(null);
 
                 m_ConnectToOWO.ShowIPs();
-                if (OWO.ConnectionState == ConnectionState.Connected)
+                if (OWOSkinService.Instance.CanFeel())
                 {
-                    OWO.Send(SensationsFactory.Create(intensityPercentage: 30, frequency: 20, durationSeconds: 0.2f));
+                    Sensation sensation = SensationsFactory.Create(intensityPercentage: 30, frequency: 20, durationSeconds: 0.2f);
+                    OWOSkinService.Instance.Feel(sensation);
                 }
             }
             else

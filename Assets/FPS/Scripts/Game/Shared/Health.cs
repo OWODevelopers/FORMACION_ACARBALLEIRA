@@ -47,8 +47,7 @@ namespace Unity.FPS.Game
         public void TakeDamage(float damage, GameObject damageSource)
         {
             //OWO.Send("8", Muscle.Arm_L.WithIntensity(40));
-            if(OWO.ConnectionState == ConnectionState.Connected)
-                OWO.Send(Sensation.Parse("60,1,70,0,0,0,Hit|0%100"));
+            OWOSkinService.Instance.Feel(Sensation.Parse("60,1,70,0,0,0,Hit|0%100"));
             if (Invincible)
                 return;
 
@@ -97,11 +96,12 @@ namespace Unity.FPS.Game
             int timePased = 0;
             do
             {
-                OWO.Send(SensationsFactory.Create(frequency:70, durationSeconds: 2));
+                Sensation sensation = SensationsFactory.Create(frequency: 70, durationSeconds: 2);
+                OWOSkinService.Instance.Feel(sensation);
                 yield return new WaitForSeconds(1);
                 timePased++;
             } while (timePased < 7);
-            OWO.Stop();
+            OWOSkinService.Instance.StopAllFeedback();
             yield return null;
         }
     }

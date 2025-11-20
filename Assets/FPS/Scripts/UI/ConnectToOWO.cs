@@ -20,14 +20,19 @@ namespace OWOGame
         private List<GameObject> m_ipButtons = new List<GameObject>();
 
         private Coroutine m_showCoroutine;
-        private OWOSkin owoSkin;
+        public static OWOSkin owoSkin;
 
         private void Awake()
         {
             EventManager.OnIpReceived += ConnectToIP;
             owoSkin = new OWOSkin();
-
         }
+
+        private void Start()
+        {
+            OWOSkinService.Instance.SetSkin(owoSkin);
+        }
+
         private void OnDestroy()
         {
             EventManager.OnIpReceived -= ConnectToIP;
@@ -104,13 +109,13 @@ namespace OWOGame
             m_selectedIPs.Add(ip);
         }
 
-        public async void ConnectToIP(string ip)
+        public void ConnectToIP(string ip)
         {
             List<string> ipList = new List<string> { ip };
             owoSkin.InitializeOWO(ipList);
         }
 
-        public async void ConnectToAll()
+        public void ConnectToAll()
         {
             owoSkin.InitializeOWO(m_selectedIPs);
         }

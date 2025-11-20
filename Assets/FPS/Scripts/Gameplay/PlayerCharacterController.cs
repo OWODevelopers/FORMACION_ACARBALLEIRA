@@ -1,4 +1,5 @@
-﻿using Unity.FPS.Game;
+﻿using OWOGame;
+using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -218,7 +219,8 @@ namespace Unity.FPS.Gameplay
 
         void OnDie()
         {
-            OWOGame.OWO.Stop();
+            if(OWOSkinService.Instance.CanFeel())
+                OWOSkinService.Instance.StopAllFeedback();
             IsDead = true;
 
             // Tell the weapons manager to switch to a non-existing weapon in order to lower the weapon

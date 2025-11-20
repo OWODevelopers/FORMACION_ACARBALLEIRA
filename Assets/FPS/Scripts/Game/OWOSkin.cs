@@ -20,6 +20,11 @@ public class OWOSkin
         RegisterAllSensationsFiles();
         DefineAllMuscleGroups();
     }
+    ~OWOSkin()
+    {
+        Debug.Log("Destructor called");
+        DisconnectOWO();
+    }
 
     #region Skin Configuration
 
@@ -75,8 +80,7 @@ public class OWOSkin
         }
         if (!suitEnabled) Debug.Log("OWO is not enabled?!?!");
     }
-
-    public BakedSensation[] AllBakedSensations()
+    private BakedSensation[] AllBakedSensations()
     {
         var result = new List<BakedSensation>();
 
@@ -95,14 +99,6 @@ public class OWOSkin
         }
         return result.ToArray();
     }
-
-
-    ~OWOSkin()
-    {
-        Debug.Log("Destructor called");
-        DisconnectOWO();
-    }
-
     public void DisconnectOWO()
     {
         Debug.Log("Disconnecting OWO skin.");
@@ -125,6 +121,16 @@ public class OWOSkin
         }
 
         else Debug.Log("Feedback not registered: " + key);
+    }
+
+    public void Feel(Sensation sensation, int Priority = 0)
+    {
+        if (sensation != null)
+        {
+            OWO.Send(sensation.WithPriority(Priority));
+        }
+
+        else Debug.Log($"Feedback not registered: {sensation}");
     }
 
     public void FeelWithMuscles(String key, String muscleKey = "Right Arm", int Priority = 0, int intensity = 0)
@@ -151,7 +157,6 @@ public class OWOSkin
 
         else Debug.Log("Feedback not registered: " + key);
     }
-
 
     public void StopAllHapticFeedback()
     {
