@@ -400,7 +400,7 @@ namespace Unity.FPS.Game
             if (m_CurrentAmmo >= 1f
                 && m_LastTimeShot + DelayBetweenShots < Time.time)
             {
-                OWOSkinService.Instance.Feel(Sensation.Dart);
+                OWOSkinService.Instance.FeelWithMuscles(Sensation.Dart, muscleKey: "Right Arm");
                 HandleShoot();
                 m_CurrentAmmo -= 1f;
                 return true;
