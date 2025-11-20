@@ -1321,8 +1321,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1823987428}
   - component: {fileID: 1823987427}
+  - component: {fileID: 1823987429}
   m_Layer: 0
-  m_Name: ConnectOWO
+  m_Name: OWO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,6 +1359,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1823987429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823987426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bbf371e0c25e54c926cb98927aaa0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: fps.Game::OWOGame.OWOSkinService
 --- !u!4 &1880561205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5963937743390997973, guid: 7042f8fe21debc944b5bdc894f478d63,
